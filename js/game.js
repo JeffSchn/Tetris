@@ -88,5 +88,5 @@ export function endGame() {
   state.gameOver = true;
   dom.overlay.style.display = 'flex';
   dom.overlayTitle.textContent = 'Game Over';
-  dom.overlayMsg.innerHTML = `<span class="final-score">${state.score.toLocaleString()} points</span><br>Press any key to restart`;
+  dom.overlayMsg.innerHTML = `<span class="final-score">${state.score.toLocaleString()} points</span><br>Tap or press any key to restart`;
 }
