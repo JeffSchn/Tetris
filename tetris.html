@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tetris">
+<meta name="theme-color" content="#0a0a1a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.svg">
 <title>Tetris</title>
 <link rel="stylesheet" href="tetris.css">
 </head>
@@ -26,7 +32,7 @@
       <h3>Next</h3>
       <canvas id="next-canvas" width="100" height="80"></canvas>
     </div>
-    <div class="controls">
+    <div class="controls keyboard-only">
       <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Move<br>
       <kbd>&uarr;</kbd> Rotate<br>
       <kbd>&darr;</kbd> Soft drop<br>
@@ -41,11 +47,28 @@
     </div>
     <div class="overlay" id="overlay">
       <h2 id="overlay-title">Tetris</h2>
-      <p id="overlay-msg">Press any key to start</p>
+      <p id="overlay-msg">Tap or press any key to start</p>
     </div>
   </div>
 </div>
 
+<div class="touch-controls" id="touch-controls">
+  <div class="touch-row">
+    <button class="touch-btn" data-action="left" aria-label="Move left">&larr;</button>
+    <button class="touch-btn" data-action="down" aria-label="Soft drop">&darr;</button>
+    <button class="touch-btn" data-action="right" aria-label="Move right">&rarr;</button>
+  </div>
+  <div class="touch-row">
+    <button class="touch-btn wide" data-action="rotate" aria-label="Rotate">Rotate</button>
+    <button class="touch-btn wide" data-action="drop" aria-label="Hard drop">Drop</button>
+  </div>
+</div>
+
 <script type="module" src="js/main.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <rect width="180" height="180" fill="#0a0a1a"/>
+  <g transform="translate(26, 14)">
+    <!-- T-piece -->
+    <rect x="32" y="10" width="28" height="28" rx="4" fill="#a000f0"/>
+    <rect x="4" y="38" width="28" height="28" rx="4" fill="#a000f0"/>
+    <rect x="32" y="38" width="28" height="28" rx="4" fill="#a000f0"/>
+    <rect x="60" y="38" width="28" height="28" rx="4" fill="#a000f0"/>
+    <!-- L-piece -->
+    <rect x="4" y="76" width="28" height="28" rx="4" fill="#f0a000"/>
+    <rect x="4" y="104" width="28" height="28" rx="4" fill="#f0a000"/>
+    <rect x="32" y="104" width="28" height="28" rx="4" fill="#f0a000"/>
+    <!-- O-piece -->
+    <rect x="70" y="76" width="28" height="28" rx="4" fill="#00f0f0"/>
+    <rect x="98" y="76" width="28" height="28" rx="4" fill="#00f0f0"/>
+    <rect x="70" y="104" width="28" height="28" rx="4" fill="#00f0f0"/>
+    <rect x="98" y="104" width="28" height="28" rx="4" fill="#00f0f0"/>
+  </g>
+</svg>
