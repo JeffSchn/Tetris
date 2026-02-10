@@ -8,7 +8,7 @@ A classic Tetris game built with pure HTML5 Canvas, CSS, and vanilla JavaScript.
 
 ## How to Play
 
-Open `tetris.html` in any modern web browser. No build step or installation required.
+Open `index.html` in any modern web browser. No build step or installation required.
 
 ### Controls
 
@@ -44,7 +44,7 @@ Soft drops award 1 point per cell. Hard drops award 2 points per cell.
 ## Project Structure
 
 ```
-tetris.html   # Game entry point (HTML + embedded JavaScript)
+index.html    # Game entry point
 tetris.css    # Styling and layout
 ```
 
