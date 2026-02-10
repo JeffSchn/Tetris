@@ -26,6 +26,7 @@ export function drawBoard() {
   }
 
   // Locked blocks
+  if (!state.board) return;
   for (let r = 0; r < ROWS; r++)
     for (let c = 0; c < COLS; c++)
       drawBlock(ctx, c, r, state.board[r][c], BLOCK);
@@ -53,6 +54,7 @@ export function drawNext() {
   const size = 20;
   nextCtx.fillStyle = '#12122a';
   nextCtx.fillRect(0, 0, nextCanvas.width, nextCanvas.height);
+  if (!state.nextPiece) return;
   const shape = SHAPES[state.nextPiece];
   const offX = (nextCanvas.width / size - shape[0].length) / 2;
   const offY = (nextCanvas.height / size - shape.length) / 2;

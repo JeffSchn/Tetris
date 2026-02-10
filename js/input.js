@@ -63,4 +63,7 @@ function handleKey(e) {
 
 export function initInput() {
   document.addEventListener('keydown', handleKey);
+  dom.overlay.addEventListener('click', () => {
+    if (!state.started || state.gameOver) startGame();
+  });
 }
