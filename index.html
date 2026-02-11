@@ -11,11 +11,6 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.svg">
 <title>Tetris</title>
 <link rel="stylesheet" href="tetris.css">
-<script>
-window.onerror = function(msg, src, line) {
-  document.getElementById('debug').textContent += msg + ' (' + src + ':' + line + ')\n';
-};
-</script>
 </head>
 <body>
 
@@ -69,20 +64,10 @@ window.onerror = function(msg, src, line) {
   </div>
 </div>
 
-<pre id="debug" style="color:#f44;font-size:12px;padding:8px;max-height:120px;overflow:auto"></pre>
-
 <script type="module" src="js/main.js"></script>
-<script type="module">
-document.getElementById('debug').textContent += 'modules loaded OK\n';
-</script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(regs) {
-    regs.forEach(function(r) { r.unregister(); });
-  });
-  caches.keys().then(function(names) {
-    names.forEach(function(name) { caches.delete(name); });
-  });
+  navigator.serviceWorker.register('./sw.js');
 }
 </script>
 </body>
