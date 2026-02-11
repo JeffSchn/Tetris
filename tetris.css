@@ -137,17 +137,15 @@ body {
 
 .touch-controls {
   display: none;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 12px 0;
+  padding: 8px 0 calc(12px + env(safe-area-inset-bottom));
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
 }
 
 .touch-row {
   display: flex;
-  gap: 10px;
+  gap: 6px;
   justify-content: center;
   width: 100%;
 }
@@ -155,12 +153,12 @@ body {
 .touch-btn {
   background: #1a1a36;
   border: 2px solid #3a3a5a;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #c0c0e0;
-  font-size: 22px;
+  font-size: 20px;
   font-family: inherit;
-  width: 72px;
-  height: 56px;
+  flex: 1;
+  height: 50px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -171,42 +169,40 @@ body {
   border-color: #6a6aaa;
 }
 
-.touch-btn.wide {
-  flex: 1;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 /* --- Mobile layout --- */
 
 @media (max-width: 540px) {
+  body {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
   .game-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .side-panel {
     flex-direction: row;
     flex-wrap: wrap;
     width: auto;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
   }
 
   .panel-box {
-    padding: 8px 14px;
+    padding: 6px 12px;
     min-width: 0;
   }
 
   .panel-box h3 {
     font-size: 9px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .panel-box .value {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .panel-box:has(#next-canvas) {
@@ -229,21 +225,36 @@ body {
   .board-container {
     padding: 4px;
   }
+
+  #game-canvas {
+    width: 280px;
+    height: 560px;
+  }
 }
 
-/* On very short screens, shrink the board */
-@media (max-height: 700px) and (max-width: 540px) {
+@media (max-height: 750px) and (max-width: 540px) {
   #game-canvas {
     width: 240px;
     height: 480px;
   }
 
-  .board-container {
-    padding: 3px;
+  .touch-btn {
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+@media (max-height: 650px) and (max-width: 540px) {
+  #game-canvas {
+    width: 200px;
+    height: 400px;
   }
 
-  .touch-btn {
-    height: 48px;
-    font-size: 20px;
+  .panel-box {
+    padding: 4px 10px;
+  }
+
+  .panel-box .value {
+    font-size: 16px;
   }
 }

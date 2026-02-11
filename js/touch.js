@@ -52,7 +52,7 @@ function performAction(action) {
       state.paused = !state.paused;
       dom.overlay.style.display = state.paused ? 'flex' : 'none';
       dom.overlayTitle.textContent = 'Paused';
-      dom.overlayMsg.textContent = 'Press P to resume';
+      dom.overlayMsg.textContent = 'Tap pause or press P to resume';
       if (!state.paused) {
         state.lastTime = performance.now();
       }
